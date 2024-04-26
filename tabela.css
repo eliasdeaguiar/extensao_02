@@ -1,0 +1,48 @@
+.container-orcamento{
+    border: 1px solid black;
+    padding: 15px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.tabela{
+    text-align: center;
+    border-collapse: collapse;
+    width: 100%;
+}
+.tabela th, .tabela td{
+    padding: 3px 8px;
+}
+.tabela th{
+    border-bottom: 1px solid grey;
+    width: 100px;
+}
+.tabela th:last-child{
+    border-right: none;
+}
+.tabela td{
+    border-top: none;
+    border-right: none;
+    border-bottom: 1px solid grey;
+    border-left: none;
+}
+.cabecalho-tabela{
+    display: flex;
+    flex-direction: column;
+}
+
+#conteudo_orcamentos a{
+    text-decoration: none;
+    color: black;
+    cursor: auto;
+}
+#conteudo_orcamentos #botao_adicionar_orcamento{
+    color: rgb(7, 102, 131);
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+#conteudo_orcamentos input{
+    width: 100px;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+}

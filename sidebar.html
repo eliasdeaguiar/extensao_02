@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Odonto </title>
+    <link rel="stylesheet" href="sidebar.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Odonto</h2>
+        <!-- <a id="toggleBtn"><img src="botao-ambuerguer.png" alt="botao hamburguer"></a> -->
+        <ul>
+          <li><a id="orcamento" href="#">Orçamento</a></li>
+          <li><a id="pacientes" href="#">Pacientes</a></li>
+          <li><a href="#">Deslogar</a></li>
+          <!-- Add more menu items as needed -->
+        </ul>
+      </div>
+      <div id="conteudo_paginas">
+        
+      </div>
+      <script src="sidebar-script.js"></script>
+      <script>
+        // Função para carregar o conteúdo de orcamentos.html na div#conteudo_paginas
+        function carregarConteudoOrcamentos() {
+            $("#conteudo_paginas").load("orcamentos.html"); 
+        }
+
+        // Função para carregar o conteúdo de adicionarOrcamentos.html na div#conteudo_paginas
+        function carregarConteudoAdicionarOrcamentos() {
+            $("#conteudo_paginas").load("adicionarOrcamentos.html"); 
+        }
+
+        // Carrega o conteúdo padrão (orcamentos.html) quando a página é carregada inicialmente
+        $(document).ready(function() {
+            carregarConteudoOrcamentos();
+        });
+
+        // Define os listeners de clique nos itens do menu
+        $(document).ready(function() {
+            $('#orcamento').click(function() {
+                carregarConteudoOrcamentos();
+            });
+
+            $('#pacientes').click(function() {
+                carregarConteudoAdicionarOrcamentos();
+            });
+        });
+    </script>
+</body>
+</html>

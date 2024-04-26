@@ -1,0 +1,51 @@
+:root{
+    --cor-principal: #060c26;
+}
+
+
+body{
+    width: 100vw;
+    height: 100vh;
+    background-color: #060c26;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 20px 40px;
+}
+section #usuario, section #senha{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 5px;
+}
+section button{
+    background-color: var(--cor-principal);
+    border-color: var(--cor-principal);
+    color: white;
+    transition: all 0.3s;
+    padding: 3px 6px 5px 6px;
+    border-radius: 5px;
+}
+section button:hover{
+    cursor: pointer;
+    background-color: transparent;
+    color: var(--cor-principal);
+    transform: scale(1.1);
+    transition: all 0.3s;
+}
+.inputs{
+    width: 250px;
+    padding: 2px 4px;
+    border-radius: 3px;
+    outline: none;
+    border: 1px solid black;
+    padding: 5px 0 5px 15px
+}
+.inputs:focus{
+    border: 1px var(--cor-principal) solid;
+}
