@@ -10,25 +10,25 @@
     <section>
         <h1>Logar</h1>
         <div id="usuario">
-            <label for="usuario">Usuario:</label>
-            <input class="inputs" type="text" name="usuario" id="usuario" placeholder="Digite seu usuario">
+            <label>Usuario:</label>
+            <input class="inputs" type="text" id="usuario_id" placeholder="Digite seu usuario">
         </div>
         <div id="senha">
-            <label for="senha">Senha</label>
-            <input class="inputs" type="password" id="senha" placeholder="Digite sua senha">
+            <label>Senha</label>
+            <input class="inputs" type="password" id="senha_id" placeholder="Digite sua senha">
         </div>
         <button id="botao_login">Login</button>
     </section>
 
     <script>
         function verificarCredenciais() {
-            var usuario = document.getElementById("usuario").value;
-            var senha = document.getElementById("senha").value;
-
+            var usuario = document.getElementById("usuario_id").value;
+            var senha = document.getElementById("senha_id").value;
             if (usuario == "elias" && senha == "elias") {
                 // Redireciona para sidebar.html
                 window.location.href = "sidebar.html";
             } else {
+                console.log(document.getElementById("usuario"))
                 // Aqui você pode lidar com uma mensagem de erro ou outra ação
                 console.log("Credenciais inválidas");
             }

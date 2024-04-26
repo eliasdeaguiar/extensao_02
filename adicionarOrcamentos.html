@@ -5,15 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Adicionar Pacientes</title>
 
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
     <link rel="stylesheet" href="adicionarOrcamentos.css">
+    
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <main id="conteudo_adicionar_orcamento">
         <a class="a-ativo"  href="#">Orçamentos /</a> <a href="#">Adicionar Orçamento</a>
         <div class="container-adicionar-orcamento">
-            <h3>Novo Orçamento</h3>
+            <div class="div-h3">
+                <h3>Novo Orçamento</h3>
+            </div>
             <div class="container-adicionar-orcamento-conteudo">
                 <div class="container-informacoes">
                     <div class="div-inputs">
@@ -23,7 +25,7 @@
                                 <input type="text" class="form-control" id="paciente" placeholder="Digite o nome do paciente">
                                 <div class="input-group-append">
                                     <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i>
-                                    </span> <!-- Ícone de lupa -->
+                                    </span>
                                 </div>
                             </div>
                         </div>
@@ -39,23 +41,15 @@
     </main>
 
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
     <script>
-        // Obtém a data atual
         var dataAtual = new Date();
 
-        // Formata a data para o formato do input de data (AAAA-MM-DD)
         var ano = dataAtual.getFullYear();
-        var mes = ('0' + (dataAtual.getMonth() + 1)).slice(-2); // Adiciona um zero à esquerda se o mês tiver apenas um dígito
-        var dia = ('0' + dataAtual.getDate()).slice(-2); // Adiciona um zero à esquerda se o dia tiver apenas um dígito
+        var mes = ('0' + (dataAtual.getMonth() + 1)).slice(-2);
+        var dia = ('0' + dataAtual.getDate()).slice(-2);
 
-        // Monta a data no formato esperado pelo input de data
         var dataFormatada = ano + '-' + mes + '-' + dia;
 
-        // Define o valor padrão do input de data
         document.getElementById('data').value = dataFormatada;
     </script>
 </body>

@@ -1,4 +1,4 @@
-const orcamentos = [
+var orcamentos = [
     {
         orcamento: 0,
         paciente: 'Paulo Machado',

@@ -2,10 +2,15 @@
     --cor-principal: #060c26;
     --cor--selecao: #fe0000;
 }
-h3{
+.div-h3{
     width: 100%;
     background-color: #e0dcdb;
-    padding: 10px 0 10px 15px;
+    padding: 10px -15px 10px 15px;
+    margin: 0;
+}
+h3{
+    margin: 0;
+    padding-left: 15px;
 }
 
 #conteudo_adicionar_orcamento input{
