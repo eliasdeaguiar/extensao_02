@@ -13,8 +13,8 @@
         <h2>Odonto</h2>
 
         <ul>
-          <li><a id="orcamento" href="#">Orçamento</a></li>
-          <li><a id="pacientes" href="#">Pacientes</a></li>
+          <li><a id="botao_orcamento" href="#">Orçamento</a></li>
+          <li><a id="botao_pacientes" href="#">Pacientes</a></li>
           <li><a href="#">Deslogar</a></li>
         </ul>
     </div>
@@ -25,21 +25,27 @@
       
     <!-- <script src="sidebar-script.js"></script> -->
     <script>
-
         function carregarConteudoOrcamentos() {
             $("#conteudo_paginas").load("orcamentos.html"); 
         }
+        carregarConteudoOrcamentos()
 
         function carregarConteudoAdicionarOrcamentos() {
             $("#conteudo_paginas").load("adicionarOrcamentos.html"); 
         }
 
-        document.querySelector('#orcamento').addEventListener('click', ()=>{
+        function carregarConteudoPacientes(){
+            $("#conteudo_paginas").load("pacientes.html");
+        }
+        function carregarConteudoAdicionarPaciente(){
+            $("#conteudo_paginas").load("adicionarPacientes.html"); 
+        }
+
+        document.querySelector('#botao_orcamento').addEventListener('click', ()=>{
             carregarConteudoOrcamentos();
         })
-
-        document.querySelector('#pacientes').addEventListener('click', ()=>{
-            carregarConteudoAdicionarOrcamentos();
+        document.querySelector('#botao_pacientes').addEventListener('click', ()=>{
+            carregarConteudoPacientes();
         })
     </script>
     

@@ -1,0 +1,10 @@
+.botao-acao{
+    width: 25px;
+    margin-right: 5px;
+    transition: all 0.3s;
+}
+.botao-acao:hover{
+    cursor: pointer;
+    transition: all 0.3s;
+    transform: scale(1.2);
+}

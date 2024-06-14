@@ -10,7 +10,7 @@
 }
 h3{
     margin: 0;
-    padding-left: 15px;
+    padding:10px 0 10px 15px;
 }
 
 #conteudo_adicionar_orcamento input{
@@ -43,27 +43,28 @@ h3{
     padding: 15px;
 }
 
-#conteudo_adicionar_orcamento a{
+.a-inativo{
     text-decoration: none;
     color: black;
     cursor: auto;
 }
 
-#conteudo_adicionar_orcamento .a-ativo{
+.a-ativo{
     color: blue;
     cursor: pointer;
     text-decoration: underline;
   }
 
-#conteudo_adicionar_orcamento .botao-adicionar{
+.botao-adicionar{
     border: 1px solid #124d8d;
     padding: 5px;
     border-radius: 5px;
     background-color: #124d8d;
     color: white;
     transition: all 0.3s;
+    text-decoration: none;
 }
-#conteudo_adicionar_orcamento .botao-adicionar:hover{
+.botao-adicionar:hover{
     background-color: white;
     color: #124d8d;
     transition: all 0.3s;
@@ -71,15 +72,16 @@ h3{
     cursor: pointer;
 }
 
-#conteudo_adicionar_orcamento .botao-cancelar{
+.botao-cancelar{
     border: 1px solid #727c91;
     padding: 5px;
     border-radius: 5px;
     background-color: #727c91;
     color: white;
     transition: all 0.3s;
+    text-decoration: none;
 }
-#conteudo_adicionar_orcamento .botao-cancelar:hover{
+.botao-cancelar:hover{
     background-color: white;
     color: #727c91;
     transition: all 0.3s;
@@ -87,5 +89,9 @@ h3{
     cursor: pointer;
 }
 
-
-
+.container-adicionar-pacientes{
+    padding: 10px;
+}
+.div-botoes-acao-adicionar-cancelar{
+    margin-top: 20px;
+}

@@ -11,7 +11,7 @@
 </head>
 <body>
     <main id="conteudo_adicionar_orcamento">
-        <a class="a-ativo"  href="#">Orçamentos /</a> <a href="#">Adicionar Orçamento</a>
+        <a class="a-ativo" id="botao_voltar_a_orcamentos" href="#">Orçamentos /</a> <a class="a-inativo" href="#">Adicionar Orçamento</a>
         <div class="container-adicionar-orcamento">
             <div class="div-h3">
                 <h3>Novo Orçamento</h3>
@@ -34,8 +34,10 @@
                         <input type="date" name="data" id="data">
                     </div>
                 </div>
-                <a class="botao-adicionar" href="#">Adicionar</a>
-                <a class="botao-cancelar" href="#">Cancelar</a>
+                <div class="div-botoes-acao-adicionar-cancelar">
+                    <a class="botao-adicionar" href="#">Adicionar</a>
+                    <a class="botao-cancelar" href="#">Cancelar</a>
+                </div>
             </div>
         </div>
     </main>
@@ -51,6 +53,10 @@
         var dataFormatada = ano + '-' + mes + '-' + dia;
 
         document.getElementById('data').value = dataFormatada;
+
+        document.querySelector('#botao_voltar_a_orcamentos').addEventListener('click', ()=>{
+            carregarConteudoOrcamentos();
+        })
     </script>
 </body>
 </html>

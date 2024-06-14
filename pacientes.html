@@ -1,20 +1,20 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orçamentos</title>
+    <title>Pacientes</title>
     <link rel="stylesheet" href="tabela.css">
     <link rel="stylesheet" href="botoes-acao.css">
-    
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
-    <main id="conteudo_orcamentos" class="conteudo">
-        <a href="#">Orçamentos</a>
+    <main id="conteudo_pacientes" class="conteudo">
+        <a href="#">Pacientes</a>
         <div class="container-tabela">
             <div class="cabecalho-tabela">
-                <a href="#" id="botao_adicionar_orcamento" class="botao_adicionar">ADICIONAR ORÇAMENTO</a>
+                <a href="#" id="botao_adicionar_paciente" class="botao_adicionar">ADICIONAR PACIENTE</a>
                 <input type="text" placeholder="Procurar">
             </div>
             <div id="conteudo">
@@ -25,10 +25,10 @@
         </div>
     </main>
     
-    <script src="orcamentos.js" defer></script>
+    <script src="pacientes.js" defer></script>
     <script>
-        document.querySelector('#botao_adicionar_orcamento').addEventListener('click', ()=>{
-            carregarConteudoAdicionarOrcamentos();
+        document.querySelector('#botao_adicionar_paciente').addEventListener('click', ()=>{
+            carregarConteudoAdicionarPaciente();
         })
     </script>
 </body>

@@ -47,7 +47,19 @@ var orcamentos = [
 ]
 var tabela = '<table class="tabela"><tr><th>Orçamento</th><th>Paciente</th><th>Situação</th><th>Celular</th><th>WhatsApp</th><th>Data do Orçamento</th><th>Convênio</th><th>Ações</th></tr>';
 for (let i = 0; i < orcamentos.length; i++) {
-    tabela += `<tr><td>${orcamentos[i].orcamento}</td><td>${orcamentos[i].paciente}</td><td>${orcamentos[i].situacao}</td><td>${orcamentos[i].celular}</td><td>${orcamentos[i].whatsapp}</td><td>${orcamentos[i].dataorcamento}</td><td>${orcamentos[i].convenio}</td><td></td></tr>`;
+    tabela += `<tr>\
+                <td>${orcamentos[i].orcamento}</td>\
+                <td>${orcamentos[i].paciente}</td>\
+                <td>${orcamentos[i].situacao}</td>\
+                <td>${orcamentos[i].celular}</td>\
+                <td>${orcamentos[i].whatsapp}</td>\
+                <td>${orcamentos[i].dataorcamento}</td>\
+                <td>${orcamentos[i].convenio}</td>\
+                <td>
+                    <img class="botao-acao" src="botao-editar.png">
+                    <img class="botao-acao" src="botao-apagar.png">
+                </td>\
+               </tr>`;
 }
 tabela += '</table>';
 
