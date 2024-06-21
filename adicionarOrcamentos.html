@@ -11,7 +11,7 @@
 </head>
 <body>
     <main id="conteudo_adicionar_orcamento">
-        <a class="a-ativo" id="botao_voltar_a_orcamentos" href="#">Orçamentos /</a> <a class="a-inativo" href="#">Adicionar Orçamento</a>
+        <a class="a-ativo botao_orcamento" id="botao_voltar_a_orcamentos">Orçamentos</a> <a class="a-inativo">/ Adicionar Orçamento</a>
         <div class="container-adicionar-orcamento">
             <div class="div-h3">
                 <h3>Novo Orçamento</h3>
@@ -36,7 +36,7 @@
                 </div>
                 <div class="div-botoes-acao-adicionar-cancelar">
                     <a class="botao-adicionar" href="#">Adicionar</a>
-                    <a class="botao-cancelar" href="#">Cancelar</a>
+                    <a class="botao-cancelar botao_orcamento" href="#">Cancelar</a>
                 </div>
             </div>
         </div>
@@ -54,9 +54,6 @@
 
         document.getElementById('data').value = dataFormatada;
 
-        document.querySelector('#botao_voltar_a_orcamentos').addEventListener('click', ()=>{
-            carregarConteudoOrcamentos();
-        })
     </script>
-</body>
+    <script src="botaoCarregarConteudoSideBar.js"></script>
 </html>

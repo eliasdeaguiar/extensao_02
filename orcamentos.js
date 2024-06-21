@@ -45,6 +45,7 @@ var orcamentos = [
         convenio: 'UNIMED'
     }
 ]
+
 var tabela = '<table class="tabela"><tr><th>Orçamento</th><th>Paciente</th><th>Situação</th><th>Celular</th><th>WhatsApp</th><th>Data do Orçamento</th><th>Convênio</th><th>Ações</th></tr>';
 for (let i = 0; i < orcamentos.length; i++) {
     tabela += `<tr>\
@@ -63,4 +64,4 @@ for (let i = 0; i < orcamentos.length; i++) {
 }
 tabela += '</table>';
 
-document.querySelector('#conteudo').innerHTML = tabela;
+document.querySelector('#conteudo').innerHTML = tabela

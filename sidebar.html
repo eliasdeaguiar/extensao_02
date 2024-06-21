@@ -13,41 +13,77 @@
         <h2>Odonto</h2>
 
         <ul>
-          <li><a id="botao_orcamento" href="#">Orçamento</a></li>
-          <li><a id="botao_pacientes" href="#">Pacientes</a></li>
-          <li><a href="#">Deslogar</a></li>
+          <li><a id="botao_orcamento" class="botao_orcamento" href="#">Orçamento</a></li>
+          <li><a id="botao_pacientes" class="botao_paciente" href="#">Pacientes</a></li>
+          <li><a href="index.html">Deslogar</a></li>
         </ul>
     </div>
     <div id="conteudo_paginas">
         
     </div>
 
-      
-    <!-- <script src="sidebar-script.js"></script> -->
     <script>
+        var pacientes = [
+            {
+                id: 0,
+                paciente: 'Paulo Machado',
+                celular: '(34) 99246-9033',
+                whatsapp: '(34) 99246-9033',
+                datanascimento: '02/02/1987',
+                convenio: 'UNIMED'
+            },
+            {
+                id: 1,
+                paciente: 'Mariana Gomes',
+                celular: '(34) 99246-9033',
+                whatsapp: '(34) 99246-9033',
+                datanascimento: '12/02/1990',
+                convenio: 'UNIMED'
+            },
+            {
+                id: 2,
+                paciente: 'juliane Machado',
+                celular: '(34) 99246-9033',
+                whatsapp: '(34) 99246-9033',
+                datanascimento: '07/01/2001',
+                convenio: 'UNIMED'
+            },
+            {
+                id: 3,
+                paciente: 'Elias Aguiar',
+                celular: '(34) 99246-9033',
+                whatsapp: '(34) 99246-9033',
+                datanascimento: '27/11/1994',
+                convenio: 'UNIMED'
+            },
+            {
+                id: 4,
+                paciente: 'Gabriel Silva',
+                celular: '(34) 99246-9033',
+                whatsapp: '(34) 99246-9033',
+                datanascimento: '19/04/1990',
+                convenio: 'UNIMED'
+            }
+        ]
         function carregarConteudoOrcamentos() {
-            $("#conteudo_paginas").load("orcamentos.html"); 
+            $("#conteudo_paginas").load("orcamentos.html")
         }
         carregarConteudoOrcamentos()
 
         function carregarConteudoAdicionarOrcamentos() {
-            $("#conteudo_paginas").load("adicionarOrcamentos.html"); 
+            $("#conteudo_paginas").load("adicionarOrcamentos.html");
         }
-
-        function carregarConteudoPacientes(){
+        function carregarConteudoPacientes() {
             $("#conteudo_paginas").load("pacientes.html");
         }
+
         function carregarConteudoAdicionarPaciente(){
             $("#conteudo_paginas").load("adicionarPacientes.html"); 
         }
-
-        document.querySelector('#botao_orcamento').addEventListener('click', ()=>{
-            carregarConteudoOrcamentos();
-        })
-        document.querySelector('#botao_pacientes').addEventListener('click', ()=>{
-            carregarConteudoPacientes();
-        })
+        
     </script>
+
+    <script src="botaoCarregarConteudoSideBar.js"></script>
     
 </body>
 </html>

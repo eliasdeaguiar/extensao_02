@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário de Pacientes</title>
+    <link rel="stylesheet" href="adicionarOrcamentos.css">
+    <link rel="stylesheet" href="tabela.css">
+</head>
+<body>
+    <a class="a-ativo botao_paciente" href="#">Pacientes</a> <a class="a-inativo" href="#">/ Editar Pacientes</a>
+    <div class="container-adicionar-orcamento">
+        <div class="div-h3">
+            <h3>Editar Paciente</h3>
+        </div>
+        <form class="container-adicionar-pacientes">
+            <div class="row">
+                <div class="form-group col-8">
+                    <label for="nomeUpdate">Update</label>
+                    <input type="text" class="form-control" id="nomeUpdate" placeholder="Digite seu nome" value="">
+                </div>
+                <div class="form-group col-4">
+                    <label for="dataNascimentoUpdate">Data de Nascimento</label>
+                    <input type="date" class="form-control" id="dataNascimentoUpdate">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-4">
+                    <label for="celularUpdate">Celular</label>
+                    <input type="text" class="form-control" id="celularUpdate" placeholder="Digite seu celular">
+                </div>
+                <div class="form-group col-4">
+                    <label for="whatsappUpdate">WhatsApp</label>
+                    <input type="text" class="form-control" id="whatsappUpdate" placeholder="Digite seu WhatsApp">
+                </div>
+                <div class="form-group col-4">
+                    <label for="cpfUpdate">CPF</label>
+                    <input type="text" class="form-control" id="cpfUpdate" placeholder="Digite seu CPF">
+                </div>
+            </div>
+            <div class="row">
+                <div class="form-group col-6">
+                    <label for="nomeMaeUpdate">Nome da Mãe</label>
+                    <input type="text" class="form-control" id="nomeMaeUpdate" placeholder="Digite o nome da sua mãe">
+                </div>
+                <div class="form-group col-6">
+                    <label for="convenioUpdate">Convênio</label>
+                    <input type="text" class="form-control" id="convenioUpdate" placeholder="Digite seu convênio">
+                </div>
+            </div>
+            <div class="div-botoes-acao-adicionar-cancelar">
+                <a class="botao-adicionar" href="#">Atualizar</a>
+                <a class="botao-cancelar botao_paciente" href="#">Cancelar</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="botaoCarregarConteudoSideBar.js"></script>
+    <script src="pacientes.js"></script>
+    <script>
+        
+    </script>
+</body>
+</html>

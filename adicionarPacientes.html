@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="tabela.css">
 </head>
 <body>
-    <a class="a-ativo" id="botao_voltar_a_pacientes" href="#">Pacientes /</a> <a class="a-inativo" href="#">Adicionar Orçamento</a>
+    <a class="a-ativo botao_paciente" href="#">Pacientes</a> <a class="a-inativo" href="#">/ Adicionar Paciente</a>
     <div class="container-adicionar-orcamento">
 
         <div class="div-h3">
-            <h3>Novo Orçamento</h3>
+            <h3>Novo Paciente</h3>
         </div>
         <form class="container-adicionar-pacientes">
             <div class="row">
@@ -52,15 +52,17 @@
             </div>
             <div class="div-botoes-acao-adicionar-cancelar">
                 <a class="botao-adicionar" href="#">Adicionar</a>
-                <a class="botao-cancelar" href="#">Cancelar</a>
+                <a class="botao-cancelar botao_paciente" href="#">Cancelar</a>
             </div>
         </form>
     </div>
 
+    <script src="botaoCarregarConteudoSideBar.js"></script>
+    <script src="pacientes.js"></script>
     <script>
-        document.querySelector('#botao_voltar_a_pacientes').addEventListener('click', ()=>{
-            carregarConteudoPacientes();
-        })
+        document.querySelector('.botao-adicionar').addEventListener('click', function(event) {
+            adicionarPaciente();
+        });
     </script>
 </body>
 </html>
