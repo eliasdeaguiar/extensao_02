@@ -18,25 +18,31 @@
             <input class="inputs" type="password" id="senha_id" placeholder="Digite sua senha">
         </div>
         <button id="botao_login">Login</button>
+        <p class="error-message" id="erro_mensagem">Usuário ou senha incorretos</p>
     </section>
 
     <script>
         function verificarCredenciais() {
             var usuario = document.getElementById("usuario_id").value;
             var senha = document.getElementById("senha_id").value;
+            var erroMensagem = document.getElementById("erro_mensagem");
+            var usuarioInput = document.getElementById("usuario_id");
+            var senhaInput = document.getElementById("senha_id");
+
             if (usuario == "elias" && senha == "elias") {
                 // Redireciona para sidebar.html
                 window.location.href = "sidebar.html";
             } else {
-                console.log(document.getElementById("usuario"))
-                // Aqui você pode lidar com uma mensagem de erro ou outra ação
+                // Adiciona classes de erro aos inputs
+                usuarioInput.classList.add("input-error");
+                senhaInput.classList.add("input-error");
+                // Mostra a mensagem de erro
+                erroMensagem.style.display = "block";
                 console.log("Credenciais inválidas");
             }
         }
-        document.querySelector('#botao_login').addEventListener('click', ()=>{
-            verificarCredenciais();
-        })
+        
+        document.querySelector('#botao_login').addEventListener('click', verificarCredenciais);
     </script>
-    
 </body>
 </html>

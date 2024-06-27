@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     
 </head>
-<body>
+<body id="todo_conteudo">
     <div class="sidebar">
         <h2>Odonto</h2>
 
@@ -27,44 +27,103 @@
             {
                 id: 0,
                 paciente: 'Paulo Machado',
-                celular: '(34) 99246-9033',
-                whatsapp: '(34) 99246-9033',
+                celular: '(34) 99988-7766',
+                whatsapp: '(34) 99988-7766',
                 datanascimento: '02/02/1987',
                 convenio: 'UNIMED'
             },
             {
                 id: 1,
-                paciente: 'Mariana Gomes',
-                celular: '(34) 99246-9033',
-                whatsapp: '(34) 99246-9033',
+                paciente: 'Marcia Gomes',
+                celular: '(34) 99988-7766',
+                whatsapp: '(34) 99988-7766',
                 datanascimento: '12/02/1990',
                 convenio: 'UNIMED'
             },
             {
                 id: 2,
                 paciente: 'juliane Machado',
-                celular: '(34) 99246-9033',
-                whatsapp: '(34) 99246-9033',
+                celular: '(34) 99988-7766',
+                whatsapp: '(34) 99988-7766',
                 datanascimento: '07/01/2001',
                 convenio: 'UNIMED'
             },
             {
                 id: 3,
                 paciente: 'Elias Aguiar',
-                celular: '(34) 99246-9033',
-                whatsapp: '(34) 99246-9033',
+                celular: '(34) 99988-7766',
+                whatsapp: '(34) 99988-7766',
                 datanascimento: '27/11/1994',
                 convenio: 'UNIMED'
             },
             {
                 id: 4,
                 paciente: 'Gabriel Silva',
-                celular: '(34) 99246-9033',
-                whatsapp: '(34) 99246-9033',
+                celular: '(34) 99988-7766',
+                whatsapp: '(34) 99988-7766',
                 datanascimento: '19/04/1990',
                 convenio: 'UNIMED'
             }
         ]
+
+        var orcamentos = [
+            {
+                orcamento: 0,
+                paciente: 'Paulo Machado',
+                situacao: 'Em espera',
+                celular: '(34) 99988-7766',
+                whatsapp: '(34) 99988-7766',
+                dataorcamento: '02/02/2024',
+                convenio: 'UNIMED',
+                servico : 'Limpeza',
+                valor: 'R$ 100'
+            },
+            {
+                orcamento: 1,
+                paciente: 'Marcia Gomes',
+                situacao: 'Em espera',
+                celular: '(34) 99988-7766',
+                whatsapp: '(34) 99988-7766',
+                dataorcamento: '12/02/2024',
+                convenio: 'UNIMED',
+                servico : 'Limpeza',
+                valor: 'R$ 100'
+            },
+            {
+                orcamento: 2,
+                paciente: 'juliane Machado',
+                situacao: 'Em espera',
+                celular: '(34) 99988-7766',
+                whatsapp: '(34) 99988-7766',
+                dataorcamento: '07/01/2024',
+                convenio: 'UNIMED',
+                servico : 'Limpeza',
+                valor: 'R$ 100'
+            },
+            {
+                orcamento: 3,
+                paciente: 'Elias Aguiar',
+                situacao: 'Em espera',
+                celular: '(34) 99988-7766',
+                whatsapp: '(34) 99988-7766',
+                dataorcamento: '27/11/2023',
+                convenio: 'UNIMED',
+                servico : 'Limpeza',
+                valor: 'R$ 100'
+            },
+            {
+                orcamento: 4,
+                paciente: 'Gabriel Silva',
+                situacao: 'Em espera',
+                celular: '(34) 99988-7766',
+                whatsapp: '(34) 99988-7766',
+                dataorcamento: '19/04/2024',
+                convenio: 'UNIMED',
+                servico : 'Limpeza',
+                valor: 'R$ 100'
+            }
+        ]
+
         function carregarConteudoOrcamentos() {
             $("#conteudo_paginas").load("orcamentos.html")
         }
@@ -84,6 +143,6 @@
     </script>
 
     <script src="botaoCarregarConteudoSideBar.js"></script>
-    
+    <script src="pacientes.js"></script>
 </body>
 </html>

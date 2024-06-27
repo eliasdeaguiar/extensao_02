@@ -6,6 +6,27 @@
     <title>Formulário de Cadastro</title>
     <link rel="stylesheet" href="adicionarOrcamentos.css">
     <link rel="stylesheet" href="tabela.css">
+    <style>
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f0f0f0;
+            padding: 20px;
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            z-index: 1000;
+        }
+        #popup{
+            color: green;
+        }
+        .blur-background {
+            filter: blur(5px);
+            pointer-events: none; /* Evita interações com o fundo enquanto o pop-up está visível */
+        }
+    </style>
 </head>
 <body>
     <a class="a-ativo botao_paciente" href="#">Pacientes</a> <a class="a-inativo" href="#">/ Adicionar Paciente</a>
@@ -57,12 +78,42 @@
         </form>
     </div>
 
+    <div id="popup"><span>Paciente adicionado com sucesso!</span></div>
+
     <script src="botaoCarregarConteudoSideBar.js"></script>
     <script src="pacientes.js"></script>
     <script>
         document.querySelector('.botao-adicionar').addEventListener('click', function(event) {
-            adicionarPaciente();
+            event.preventDefault(); // Previna a ação padrão do link
+            mostrarPopup();
         });
+
+        function mostrarPopup() {
+            var popup = document.getElementById('popup');
+            var siteTodo = document.querySelector('#todo_conteudo')
+            var container = document.querySelector('.container-adicionar-orcamento');
+            var timeoutId;
+
+            container.classList.add('blur-background');
+            popup.style.display = 'block';
+
+            // Adicionar evento de clique ao popup para fechá-lo imediatamente
+            popup.addEventListener('click', function() {
+                clearTimeout(timeoutId);
+                fecharPopup(popup, container);
+            });
+
+            timeoutId = setTimeout(function() {
+                fecharPopup(popup, container);
+            }, 5000);
+        }
+
+        function fecharPopup(popup, container) {
+            popup.style.display = 'none';
+            container.classList.remove('blur-background');
+            adicionarPaciente();
+            carregarConteudoPacientes();
+        }
     </script>
 </body>
 </html>

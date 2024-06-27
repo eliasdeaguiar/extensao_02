@@ -49,3 +49,13 @@ section button:hover{
 .inputs:focus{
     border: 1px var(--cor-principal) solid;
 }
+
+/* SENHA ERRADAS */
+
+.input-error {
+    border-color: red;
+}
+.error-message {
+    color: red;
+    display: none;
+}

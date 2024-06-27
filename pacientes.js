@@ -17,7 +17,7 @@ for (let i = 0; i < pacientes.length; i++) {
                 <td>${pacientes[i].datanascimento}</td>\
                 <td>${pacientes[i].convenio}</td>\
                 <td>
-                    <img class="botao-acao" src="botao-editar.png" onclick="editarPaciente(${pacientes[i].id})">
+                    <img class="botao-acao botao-editar" src="botao-editar.png" onclick="editarPaciente(${pacientes[i].id})">
                     <img class="botao-acao" src="botao-apagar.png">
                 </td>\
                 </tr>`;
@@ -34,15 +34,9 @@ function editarPaciente(id) {
     // Encontrar o paciente pelo ID
     var paciente = pacientes.find(p => p.id === id);
 
-    // Verificar se o paciente foi encontrado
     if (paciente) {
         // Construir a URL do formulário de pacientes com os parâmetros
-        var url = 'updatePacientes.html?id=' + paciente.id +
-                  '&nome=' + encodeURIComponent(paciente.paciente) +
-                  '&datanascimento=' + encodeURIComponent(paciente.datanascimento) +
-                  '&celular=' + encodeURIComponent(paciente.celular) +
-                  '&whatsapp=' + encodeURIComponent(paciente.whatsapp) +
-                  '&convenio=' + encodeURIComponent(paciente.convenio);
+        var url = 'updatePacientes.html';
 
         // Fazer uma requisição AJAX para obter o conteúdo do formulário
         var xhr = new XMLHttpRequest();
@@ -52,6 +46,15 @@ function editarPaciente(id) {
             if (xhr.status >= 200 && xhr.status < 400) {
                 // Sucesso na requisição
                 document.querySelector('#conteudo_paginas').innerHTML = xhr.responseText;
+
+                // Preencher os campos do formulário com os valores do paciente
+                document.getElementById('nomeUpdate').value = paciente.paciente;
+                document.getElementById('dataNascimentoUpdate').value = paciente.datanascimento;
+                document.getElementById('celularUpdate').value = paciente.celular;
+                document.getElementById('whatsappUpdate').value = paciente.whatsapp;
+                document.getElementById('convenioUpdate').value = paciente.convenio;
+
+                // Se você tiver outros campos, preencha-os aqui da mesma forma
             } else {
                 // Tratar erros, se necessário
                 console.error('Erro ao carregar formulário de pacientes.');
@@ -68,6 +71,10 @@ function editarPaciente(id) {
         alert('Paciente não encontrado.');
     }
 }
+
+// function atualizarInputsUpdatePaciente(paciente){
+//     document.querySelector('#nomeUpdate').value = paciente.paciente
+// }
 
 
 
@@ -91,8 +98,8 @@ function adicionarPaciente() {
     var novoPaciente = {
         id: orcamentos.length,
         paciente: paciente,
-        celular: '(34) 99246-9033',  // Este é um valor de exemplo fixo
-        whatsapp: '(34) 99246-9033', // Este é um valor de exemplo fixo
+        celular: '(34) 99988-7766',  // Este é um valor de exemplo fixo
+        whatsapp: '(34) 99988-7766', // Este é um valor de exemplo fixo
         datanascimento: dataNascimento,
         convenio: 'UNIMED' // Este é um valor de exemplo fixo
     };

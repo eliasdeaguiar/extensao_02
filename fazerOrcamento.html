@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fazer Orçamento</title>
+
+    <link rel="stylesheet" href="adicionarOrcamentos.css">
+    <link rel="stylesheet" href="tabela.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <main id="conteudo_adicionar_orcamento">
+        <a class="a-ativo botao_orcamento" id="botao_voltar_a_orcamentos">Orçamentos</a> <a class="a-inativo">/ Fazer Orçamento</a>
+        <div class="container-adicionar-orcamento">
+            <div class="div-h3">
+                <h3>Novo Orçamento</h3>
+            </div>
+            <div class="container-adicionar-orcamento-conteudo">
+                <div class="row">
+                    <div class="form-group col-4">
+                        <label for="pacienteNome">Paciente</label>
+                        <input type="text" class="form-control" id="pacienteNome" disabled>
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="dataOrcamento">Data</label>
+                        <input type="date" class="form-control" id="dataOrcamento">
+                    </div>
+                    <div class="form-group col-4">
+                        <label for="servico">Serviço</label>
+                        <select id="servico" class="form-control">
+                            <option value="limpeza">Limpeza - R$100,00</option>
+                            <option value="restauracao">Restauração - R$200,00</option>
+                            <option value="extracao">Extração - R$150,00</option>
+                            <!-- Adicione mais opções conforme necessário -->
+                        </select>
+                    </div>
+                </div>
+                <div class="div-botoes-acao-adicionar-cancelar">
+                    <a class="botao-adicionar" href="#">Adicionar</a>
+                    <a class="botao-cancelar botao_orcamento" href="#">Cancelar</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="botaoCarregarConteudoSideBar.js"></script>
+</body>
+</html>

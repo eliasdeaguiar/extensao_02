@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="adicionarOrcamentos.css">
     
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        .suggestions {
+            border: 1px solid #ddd;
+            max-height: 150px;
+            overflow-y: auto;
+            position: absolute;
+            background: #fff;
+            z-index: 1000;
+        }
+        .suggestion-item {
+            padding: 10px;
+            cursor: pointer;
+        }
+        .suggestion-item:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
 </head>
 <body>
     <main id="conteudo_adicionar_orcamento">
@@ -24,10 +41,10 @@
                             <div class="input-group">
                                 <input type="text" class="form-control" id="paciente" placeholder="Digite o nome do paciente">
                                 <div class="input-group-append">
-                                    <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i>
-                                    </span>
+                                    <span class="input-group-text"><i class="fa fa-search" aria-hidden="true"></i></span>
                                 </div>
                             </div>
+                            <div id="suggestions" class="suggestions"></div>
                         </div>
                     </div>
                     <div class="div-inputs">
@@ -42,18 +59,96 @@
         </div>
     </main>
 
-
     <script>
-        var dataAtual = new Date();
+        var idPacientePesquisado;
 
-        var ano = dataAtual.getFullYear();
-        var mes = ('0' + (dataAtual.getMonth() + 1)).slice(-2);
-        var dia = ('0' + dataAtual.getDate()).slice(-2);
+        $(document).ready(function() {
+            $('#paciente').on('keyup', function() {
+                var query = $(this).val().toLowerCase();
+                $('#suggestions').empty();
 
-        var dataFormatada = ano + '-' + mes + '-' + dia;
+                if (query.length > 0) {
+                    var filteredPacientes = pacientes.filter(p => p.paciente.toLowerCase().includes(query));
 
-        document.getElementById('data').value = dataFormatada;
+                    filteredPacientes.forEach(paciente => {
+                        $('#suggestions').append('<div class="suggestion-item" data-id="' + paciente.id + '">' + paciente.paciente + '</div>');
+                    });
 
+                    $('.suggestion-item').on('click', function() {
+                        var id = $(this).data('id');
+                        idPacientePesquisado = id;
+                        var pacienteSelecionado = pacientes.find(p => p.id === id);
+                        
+                        $('#paciente').val(pacienteSelecionado.paciente);
+                        $('#suggestions').empty();
+                    });
+                }
+            });
+
+            var dataAtual = new Date();
+            var ano = dataAtual.getFullYear();
+            var mes = ('0' + (dataAtual.getMonth() + 1)).slice(-2);
+            var dia = ('0' + dataAtual.getDate()).slice(-2);
+            var dataFormatada = ano + '-' + mes + '-' + dia;
+            $('#data').val(dataFormatada);
+
+            $('.botao-adicionar').on('click', function(e) {
+                e.preventDefault();
+
+                var paciente = $('#paciente').val();
+
+                if (paciente.trim() === '') {
+                    alert('Por favor, preencha o nome do paciente.');
+                } else {
+                    // Carregue o conteúdo de fazerOrcamento.html e preencha os campos necessários
+                    carregarOrcamento(idPacientePesquisado);
+                }
+            });
+        });
+
+        function carregarOrcamento(id) {
+            // Encontrar o paciente pelo ID
+            var paciente = pacientes.find(p => p.id === id);
+
+            if (paciente) {
+                // Construir a URL do formulário de orçamento
+                var url = 'fazerOrcamento.html';
+
+                // Fazer uma requisição AJAX para obter o conteúdo do formulário
+                var xhr = new XMLHttpRequest();
+                xhr.open('GET', url, true);
+
+                xhr.onload = function() {
+                    if (xhr.status >= 200 && xhr.status < 400) {
+                        // Sucesso na requisição
+                        document.querySelector('#conteudo_paginas').innerHTML = xhr.responseText;
+
+                        // Preencher os campos do formulário com os valores do paciente
+                        document.getElementById('pacienteNome').value = paciente.paciente;
+
+                        var dataAtual = new Date();
+                        var ano = dataAtual.getFullYear();
+                        var mes = ('0' + (dataAtual.getMonth() + 1)).slice(-2);
+                        var dia = ('0' + dataAtual.getDate()).slice(-2);
+                        var dataFormatada = ano + '-' + mes + '-' + dia;
+                        document.getElementById('dataOrcamento').value = dataFormatada;
+                    } else {
+                        // Tratar erros, se necessário
+                        console.error('Erro ao carregar formulário de orçamento.');
+                    }
+                };
+
+                xhr.onerror = function() {
+                    // Tratar erros de requisição
+                    console.error('Erro ao carregar formulário de orçamento.');
+                };
+
+                xhr.send();
+            } else {
+                alert('Paciente não encontrado.');
+            }
+        }
     </script>
     <script src="botaoCarregarConteudoSideBar.js"></script>
+</body>
 </html>
