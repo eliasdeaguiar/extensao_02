@@ -6,6 +6,7 @@
     <title>Editar Orçamento</title>
     <link rel="stylesheet" href="adicionarOrcamentos.css">
     <link rel="stylesheet" href="tabela.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </head>
 <body>
     <main id="conteudo_adicionar_orcamento">
@@ -50,13 +51,24 @@
                         <input type="text" class="form-control" id="servico" disabled>
                     </div>
                     <div class="form-group col-4">
-                        <label for="valor">Valor</label>
+                        <label for="valor">Valor R$</label>
                         <input type="text" class="form-control" id="valor" disabled>
                     </div>
-                    <div class="form-group col-4">
+                    <div class="form-group col-2">
                         <label for="parcelas">Parcelas</label>
                         <select id="parcelas" class="form-control">
-                            ${[...Array(12).keys()].map(i => `<option value="${i + 1}">${i + 1}x</option>`).join('')}
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
                         </select>
                     </div>
                 </div>
